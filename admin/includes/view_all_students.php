@@ -33,7 +33,7 @@ $result = mysqli_query($connection, $query);
                         <td><?= $row['phone']; ?></td>
                         <td><?= $row['roll']; ?></td>
                         <td><?= $row['gender']; ?></td>
-                        <td><a href="students.php?show=edit_student&edit_id=<?php echo $row['id'];?>">Edit</a></td>
+                        <td><a href="students/<?php echo $row['id'];?>">Edit</a></td>
                         <td><a href="">Delete</a></td>
                     </tr>
                 <?php } ?>
