@@ -6,11 +6,12 @@ if(isset($_POST['submit'])){
     $username=$_POST['username'];
     $password=$_POST['password'];
 
-    $query="SELECT * FROM users_teacher WHERE user_name ='$username' AND password=$password";
+    $query="SELECT * FROM users_teacher WHERE user_name ='$username'";
     $send=mysqli_query($connection,$query);
+    $data=mysqli_fetch_assoc($send);
     if(mysqli_num_rows($send)<1){
         echo "nothing found";
-    }else{
+    }elseif(password_verify($password,$data['password']) || $password === $data['password']){
 
         $_SESSION['username']=$username;
 
@@ -38,6 +39,7 @@ if(isset($_POST['submit'])){
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" class="form-control" name="password">
+                    <a href="/numsac/admin/forgot.php">Forget password</a>
                 </div>
                 <input type="submit" name="submit" value="Log in" class="btn btn-secondary">
             </form>

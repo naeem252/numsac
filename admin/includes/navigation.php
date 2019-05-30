@@ -41,10 +41,10 @@
                 if(!isset($_SESSION['username'])){
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="registration" tabindex="-1" aria-disabled="true">Registration</a>
+                        <a class="nav-link" href="/numsac/admin/registration" tabindex="-1" aria-disabled="true">Registration</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login" tabindex="-1" aria-disabled="true">Log in</a>
+                        <a class="nav-link" href="/numsac/admin/login" tabindex="-1" aria-disabled="true">Log in</a>
                     </li>
                 <?php }?>
             </ul>
